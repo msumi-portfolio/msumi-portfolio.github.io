@@ -1,0 +1,308 @@
+// sass that will be converted/imported into the built site's CSS hub styles.scss
+
+// ELEMENT STYLES
+
+// MAIN CONTAINERS /////////////////////////////////////////////////////////////////////////////
+html {
+  background: orange; // color sometimes shows behind desktop scrollbar
+  height: 100%; // full screen, base for other adjustments including background
+  scroll-behavior: smooth; // for jumping between anchors (must be in html section)
+}
+body { // put overall styles here
+  // backgrounds controlled by default layout/page.background/data.backgrounds presets
+  cursor: url("/assets/images/cursor.png"), default;
+  color: $colorwhite;
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 120%; // sets base size for em to use
+  margin: 0; // full screen
+  min-height: 100%; // full screen
+  overflow-y: scroll; // vertical scrollbar always shown
+  overflow-wrap: anywhere; // long words will break to next line
+  display: flex; // enable flex buffers on left and right of container
+  flex-direction: row;
+}
+div.buffer { // flex spacing on left and right of container
+  flex-basis: 0; // initial length
+  flex-shrink: 0; // does not shrink
+  flex-grow: 1; // does grow
+}
+div.container { // contains all layout elements
+  margin: $gapheight 0;
+  flex-basis: 900px; // initial length
+  flex-shrink: 1; // does shrink
+  flex-grow: 0; // does not grow
+}
+div.flex {
+  display: flex;
+  flex-direction: row;
+}
+div.flexcentered { // use in conjunction with normal .flex (flex flexcentered)
+  justify-content: center;
+  align-items: center;
+}
+div.centered { // to contain images etc.
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+  text-align: center;
+  img {
+    max-height: 10em;
+  }
+}
+div { // markdown does not generate divs as far as i can tell, this is for photogalleries etc.
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+}
+main { // main layout element
+  background: $colorbox1;
+  max-width: 100%;
+  margin-top: $gapheight;
+  // padding: $boxpadding;
+  text-align: left;
+}
+div.iframecontainer { // for normal iframes
+  background: darkslateblue; // for transparent vid element on mobile?
+  position: relative; // must be relative for iframe absolute position to work
+  overflow: hidden;
+  width: 100%; // full width of container, height is 0
+  padding-top: 56.25%; // 16:9 ratio. 75%; // padding creates the height, 4:3 aspect ratio (% is based on width of the containing element)
+  margin: calc(#{$elementmargintb} / 2) auto 0 auto;
+}
+
+// MAIN CONTAINED ELEMENTS /////////////////////////////////////////////////////////////////////////////
+h1 {
+  @include replace-bgcolor($colorbox3, $colortoggle);
+  color: $coloryellow;
+  font-family: pixelfont;
+  font-size: 2.2em;
+  text-align: center;
+  // display: inline-block;
+  margin: 0 0 calc(#{$elementmargintb} / 1.5) 0;
+  padding: 0;
+}
+h2 {
+  @include replace-bgcolor($colorbg, $colortoggle);
+  color: $colororange;
+  font-size: 1.6em;
+  // margin: calc(#{$elementmargintb} / 1) 0;
+  margin: calc(#{$elementmargintb} / 1.5) 0 0 0;
+}
+h3 {
+  @include replace-bgcolor($colorbg, $colortoggle);
+  color: $colorblue;
+  font-size: 1.3em;
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+}
+h4, h5, h6 {
+  @include replace-bgcolor($colorbg, $colortoggle);
+  color: $colorpurple;
+  font-size: 1.15em;
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+}
+p { // markdown turns lines (including images) into p
+  @include replace-bgcolor($colorbox2, $colortoggle);
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+}
+p, li { // line height of normal text
+  line-height: $lineheight;
+}
+a {
+  @include replace-bgcolor($colorbg, $colortoggle);
+  cursor: url("/assets/images/cursor.png"), default;
+  color: $colorgreen;
+  text-decoration: none;
+}
+a:link { // :link = pseudoclass unvisited
+ color: $colorgreen;
+}
+a:visited { // :visited = pseudoclass visited
+ color: $colorgreen;
+}
+a:hover { // :hover = pseudoclass hovered
+ color: $colorred;
+}
+a:active { // :active = pseudoclass being clicked
+ color: $coloryellow;
+}
+img {
+  margin: 0;
+  vertical-align: bottom; // displays as inline-block by default which creates The Gap
+  max-width: 100%;
+  max-height: 100%;
+}
+ul, ol { // for markdown again
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+  padding: 0 0 0 2em; // normally 40px
+  li {
+    @include replace-bgcolor($colorbox2, $colortoggle);
+    margin: calc(#{$elementmargintb} / 4) 0 0 0;
+    ul, ol { // nested markdown lists create a new ul inside the previous li
+      margin: 0;
+      padding: 0 0 0 1.6em; // normally 40px
+      li { // just for colortoggle visibility
+        @include replace-bgcolor($colorbox3, $colortoggle);
+      }
+    }
+    p {
+      margin: 0;
+      // display: inline-block; // BREAKS EMPTY LISTING DESCRIPTIONS
+    }
+  }
+}
+ul { // unordered list marker styling
+  ::marker { // 1st+ level ul
+    // content: "•  "; // customized default bullet
+    // content: "🟊 "; // custom bullet
+    content: "*  "; // custom bullet
+    color: $colorpurple;
+  }
+  ul {
+    ::marker { // 2nd+ level ul
+      content: "~  "; // custom bullet
+    }
+  }
+}
+ol { // ordered list marker styling
+  ::marker { // 1st+ level ol
+     content: counter(list-item)") ";
+     color: $colorpurple;
+  }
+  ul {
+    ::marker { // 2nd+ level ul
+      content: "~  ";
+    }
+    ol {
+      ::marker { // 3rd+ level ol
+         content: counter(list-item)") ";
+      }
+    }
+  }
+}
+hr { // divider
+  width: 80%;
+  border: 1.5px solid $colorblue;
+  // border-radius: 20px;
+  margin: calc(#{$elementmargintb} / 1) auto;
+}
+audio {
+  // cursor: url("/assets/images/cursor.png"), default;
+  vertical-align: bottom; // has gap like img, audio player displays as inline by default
+  max-width: 100%;
+  border-radius: 100px;
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+}
+video {
+  max-width: 100%;
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+}
+iframe { // overlaps the full area of iframe container
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  // cursor: url("/assets/images/cursor.png"), default;
+  // display: inline-block;
+  // vertical-align: bottom; // has gap like img, iframe displays as inline by default ("inline frame")
+  border: none;
+}
+
+// HEADER, FOOTER, NAVIGATION /////////////////////////////////////////////////////////////////////////////
+header {
+  // background: $colorbox1;
+  max-width: 100%;
+  height: 2em;
+  text-align: center;
+  margin: 0;
+  img { // needs adjustment
+    // height: 100%;
+    // display: block; // link takes up full image size
+    // margin: auto; // center
+  }
+}
+footer {
+  // background: $colorbox1;
+  max-width: 100%;
+  // height: 2em;
+  text-align: center;
+  margin-top: $gapheight;
+  img {
+    height: 2em;
+  }
+}
+nav { // horizontal navbar
+  // background: $colorbox2;
+  font-size: 1.2em;
+  max-width: 100%;
+  margin-top: $gapheight;
+  text-align: center;
+  padding: calc(#{$boxpadding} / 2);
+  img {
+    height: 1em;
+  }
+  a.current { // "current" class for highlighting navigation
+      color: $colorwhite;
+  }
+  a:link:not(.current) { // :link = pseudoclass unvisited
+   color: $colorpurple;
+  }
+  a:visited:not(.current) { // :visited = pseudoclass visited
+   color: $colorpurple;
+  }
+  a:hover:not(.current) { // :hover = pseudoclass hovered
+   color: $coloryellow;
+  }
+  a:active:not(.current) { // :active = pseudoclass being clicked
+   color: $colorred;
+  }
+}
+
+// GALLERY ELEMENTS /////////////////////////////////////////////////////////////////////////////
+// new flex version
+.gallery {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.galleryitem { // container for picture, overlay, and text
+  margin: 0;
+  position: relative;
+  width: 50%;
+}
+.gallerypic { // picture
+  display: block;
+  width: 100%;
+  align-self: center;
+}
+.galleryoverlay { // overlay
+  margin: 0;
+  background: rgba(0,20,20,0.5);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+.galleryitem:hover .galleryoverlay { // when item is hovered, change these overlay settings
+  opacity: 1;
+  transition: .2s;
+}
+.galleryitem .galleryoverlay { // when item is un-hovered, change these overlay settings
+  transition: .2s;
+}
+.gallerytext { // overlay text
+  margin: 0;
+  position: absolute;
+  top: 50%; // center
+  left: 50%; // center
+  transform: translate(-50%, -50%); // compensate for element width/height
+  -webkit-transform: translate(-50%, -50%); // chrome, safari, etc.
+  -ms-transform: translate(-50%, -50%); // internet explorer
+  text-align: center;
+  width: 80%;
+  h2 {
+    margin: 0;
+  }
+}

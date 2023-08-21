@@ -1,0 +1,15 @@
+# stores data for navigation bar, call with "site.data.navigation"
+# baseurl is prepended in topnav.html
+
+- name: illustration
+  link: /
+- name: character
+  link: /character.html
+- name: animation
+  link: /animation.html
+- name: comics
+  link: /comics.html
+- name: traditional
+  link: /traditional.html
+- name: contact
+  link: /contact.html

@@ -1,0 +1,16 @@
+# does not automatically refresh with jekyll serve
+
+url: https://msumi-portfolio.github.io/
+
+sass:
+    sass_dir: _sass
+
+# front matter defaults: automatically add values to front matter (ex: assign layouts to specific page types)
+# scope = WHICH files to add to, values = WHAT values to add
+# general paths are overriden by more specific ones, which are overriden by in-file front matter
+defaults:
+  - scope: # default template
+      path: "" # select all files in project
+    values:
+      layout: "default"
+      background: default
