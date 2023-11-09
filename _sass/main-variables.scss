@@ -7,6 +7,8 @@ $gapheight: 20px; // spacing between main layout elements
 $boxpadding: 20px; // padding for containers
 $elementmargintb: 40px; // top/bottom spacing for contained elements, ex: h1 or p
 $lineheight: 1.4em; // for normal text and emojis, 1.6 is recommended, wikibox p's are reset to "normal" (~110%-120%)
+$containerwidth: 1000px; // contains all layout elements
+$transition: .2s; // for animations such as gallery overlay
 
 $colorbg: rgb(26,28,43);
 $colorbox1: rgb(44,52,67);
@@ -35,8 +37,15 @@ $colortoggle: false;
 
 // FONTS /////////////////////////////////////////////////////////////////////////////
 @import url('https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
 @font-face { // set custom font
   font-family: pixelfont;
   src: url("/assets/fonts/5x5pixelfont.ttf"); // requires leading /, does not accept liquid site.baseurl
+}
+@font-face { // set custom font
+  font-family: handwritten;
+  src: url("/assets/fonts/zzzhandwritten.ttf"); // requires leading /, does not accept liquid site.baseurl
 }

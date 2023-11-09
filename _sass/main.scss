@@ -4,15 +4,17 @@
 
 // MAIN CONTAINERS /////////////////////////////////////////////////////////////////////////////
 html {
-  background: orange; // color sometimes shows behind desktop scrollbar
+  background: black; // color sometimes shows behind desktop scrollbar
   height: 100%; // full screen, base for other adjustments including background
   scroll-behavior: smooth; // for jumping between anchors (must be in html section)
 }
 body { // put overall styles here
   // backgrounds controlled by default layout/page.background/data.backgrounds presets
-  cursor: url("/assets/images/cursor.png"), default;
+  // cursor: url("/assets/images/cursor.png"), default;
   color: $colorwhite;
-  font-family: 'Anonymous Pro', monospace;
+  // font-family: 'M PLUS Code Latin', monospace;
+  // font-family: 'Sanchez', serif;
+  font-family: 'PT Mono', monospace;
   font-size: 120%; // sets base size for em to use
   margin: 0; // full screen
   min-height: 100%; // full screen
@@ -28,7 +30,7 @@ div.buffer { // flex spacing on left and right of container
 }
 div.container { // contains all layout elements
   margin: $gapheight 0;
-  flex-basis: 900px; // initial length
+  flex-basis: $containerwidth; // initial length
   flex-shrink: 1; // does shrink
   flex-grow: 0; // does not grow
 }
@@ -51,11 +53,11 @@ div { // markdown does not generate divs as far as i can tell, this is for photo
   margin: calc(#{$elementmargintb} / 2) 0 0 0;
 }
 main { // main layout element
-  background: $colorbox1;
+  @include replace-bgcolor($colorbox1, $colortoggle);
   max-width: 100%;
   margin-top: $gapheight;
   // padding: $boxpadding;
-  text-align: left;
+  text-align: center;
 }
 div.iframecontainer { // for normal iframes
   background: darkslateblue; // for transparent vid element on mobile?
@@ -70,7 +72,7 @@ div.iframecontainer { // for normal iframes
 h1 {
   @include replace-bgcolor($colorbox3, $colortoggle);
   color: $coloryellow;
-  font-family: pixelfont;
+  font-family: handwritten;
   font-size: 2.2em;
   text-align: center;
   // display: inline-block;
@@ -82,7 +84,7 @@ h2 {
   color: $colororange;
   font-size: 1.6em;
   // margin: calc(#{$elementmargintb} / 1) 0;
-  margin: calc(#{$elementmargintb} / 1.5) 0 0 0;
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
 }
 h3 {
   @include replace-bgcolor($colorbg, $colortoggle);
@@ -105,7 +107,7 @@ p, li { // line height of normal text
 }
 a {
   @include replace-bgcolor($colorbg, $colortoggle);
-  cursor: url("/assets/images/cursor.png"), default;
+  // cursor: url("/assets/images/cursor.png"), default;
   color: $colorgreen;
   text-decoration: none;
 }
@@ -257,16 +259,16 @@ nav { // horizontal navbar
 }
 
 // GALLERY ELEMENTS /////////////////////////////////////////////////////////////////////////////
-// new flex version
-.gallery {
+// flex version
+.gallery { // whole thing
   margin: 0;
   display: flex;
   flex-wrap: wrap;
 }
 .galleryitem { // container for picture, overlay, and text
-  margin: 0;
+  margin: 1%;
   position: relative;
-  width: 50%;
+  width: 48%;
 }
 .gallerypic { // picture
   display: block;
@@ -275,7 +277,7 @@ nav { // horizontal navbar
 }
 .galleryoverlay { // overlay
   margin: 0;
-  background: rgba(0,20,20,0.5);
+  background: rgba(0,20,20,0.7);
   opacity: 0;
   position: absolute;
   top: 0;
@@ -287,10 +289,10 @@ nav { // horizontal navbar
 }
 .galleryitem:hover .galleryoverlay { // when item is hovered, change these overlay settings
   opacity: 1;
-  transition: .2s;
+  transition: $transition;
 }
 .galleryitem .galleryoverlay { // when item is un-hovered, change these overlay settings
-  transition: .2s;
+  transition: $transition;
 }
 .gallerytext { // overlay text
   margin: 0;
@@ -305,4 +307,77 @@ nav { // horizontal navbar
   h2 {
     margin: 0;
   }
+}
+
+// GALLERYNEW: sort images into 2 columns (also uses styles from regular gallery)
+.gallerynew { // whole thing
+  margin: -2% 0; // offset galleryitemnew top and bottom margin
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: space-between; // columns are pushed to left and right
+}
+.galleryitemnew { // container for picture, overlay, and text
+  margin: 4% 0 4% 0;
+  position: relative;
+  width: 100%;
+}
+.galleryitemnew:hover .galleryoverlay { // when item is hovered, change these overlay settings
+  opacity: 1;
+  transition: $transition;
+}
+.galleryitemnew .galleryoverlay { // when item is un-hovered, change these overlay settings
+  transition: $transition;
+}
+.galleryitemnew:hover .gallerypic { // when item is hovered, change these pic settings
+  filter: contrast(50%);
+  transition: $transition;
+}
+.galleryitemnew .gallerypic { // when item is un-hovered, change these pic settings
+  filter: contrast(100%);
+  transition: $transition;
+}
+.column1 {
+  margin: 0;
+  width: 49%;
+  justify-content: space-around;
+}
+.column2 {
+  margin: 0;
+  width: 49%;
+}
+// LIGHTBOX https://codeconvey.com/pure-css-lightbox/
+.state { // for the checkbox itself
+  display: none;
+  // display: fixed;
+}
+.lightbox { // unchecked
+  display: none;
+}
+.backdrop { // unchecked
+  display: none;
+}
+.state:checked ~ .lightbox {
+  z-index: 2;
+  background-color: orange;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 90%;
+  max-width: 90%;
+ }
+.state:checked ~ .backdrop {
+  z-index: 1;
+  background-color: rgba(200, 0, 0, 0.5);
+  border: 10px;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  transition: 0.3s opacity ease-in-out;
 }

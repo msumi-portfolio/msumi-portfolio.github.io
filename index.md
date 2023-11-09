@@ -1,30 +1,33 @@
 ---
 title: illustration
 
-gallerydir: gallerytest
+gallerydir: illustration
 gallery:
-  - name: night tile
-    filename: tilenight.png
-    description: a dark tiled background for your site
-  - name: flame tile
-    filename: tileflame.png
-    description: a bright tiled background resembling flames
-  - name: sea tile
-    filename: tilesea.png
-    description: a peaceful tiled background. smells minty
-  - name: a tile
-    filename: tilewave.png
-    description: a dark tiled background for your site
-  - name: b tile
-    filename: tilecloud.png
-    description: a bright tiled background resembling flames
+  - name: Panthera vs. Madd
+    filename: marsuro art trade c.jpg
+    description: front character by @marsuro on tumblr, back character by me, original
+    column: 1
+  - name: Lupin III Tart
+    filename: GOURMET FINAL c.jpg
+    description: zine illustration, fanart
+    column: 2
+  - name: Lupin III Reveal
+    filename: smash bros collab loop announce c.jpg
+    description: Super Smash Bros. Ultimate, fanart
+    column: 1
+  - name: Lupin III Skins
+    filename: loop alt colors.gif
+    description: Super Smash Bros. Ultimate, fanart
+    column: 2
+  - name: Lupin III Halfpipe
+    filename: between heists CROP 8.5 c.jpg
+    description: zine illustration, fanart
+    column: 1
+  - name: '"Incompleteness" Triptych'
+    filename: tryptich combined small margin c.jpg
+    description: original
+    column: 2
 
 ---
 
-## hello world
-
-normaltext :^)
-
-[gallery.html](gallery)
-
-{% include gallery.html %}
+{% include gallerynew.html %}
