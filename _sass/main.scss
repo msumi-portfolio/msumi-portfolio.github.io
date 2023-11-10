@@ -34,6 +34,12 @@ div.container { // contains all layout elements
   flex-shrink: 1; // does shrink
   flex-grow: 0; // does not grow
 }
+main { // main layout element
+  @include replace-bgcolor($colorbox1, $colortoggle);
+  max-width: 100%;
+  margin-top: $gapheight;
+  text-align: center;
+}
 div.flex {
   display: flex;
   flex-direction: row;
@@ -49,23 +55,20 @@ div.centered { // to contain images etc.
     max-height: 10em;
   }
 }
-div { // markdown does not generate divs as far as i can tell, this is for photogalleries etc.
-  margin: calc(#{$elementmargintb} / 2) 0 0 0;
-}
-main { // main layout element
-  @include replace-bgcolor($colorbox1, $colortoggle);
-  max-width: 100%;
-  margin-top: $gapheight;
-  // padding: $boxpadding;
-  text-align: center;
-}
 div.iframecontainer { // for normal iframes
   background: darkslateblue; // for transparent vid element on mobile?
   position: relative; // must be relative for iframe absolute position to work
   overflow: hidden;
   width: 100%; // full width of container, height is 0
-  padding-top: 56.25%; // 16:9 ratio. 75%; // padding creates the height, 4:3 aspect ratio (% is based on width of the containing element)
+  padding-top: 56.25%; // = 16:9 ratio, padding creates the height, 75% = 4:3 aspect ratio (% is based on width of the containing element)
   margin: calc(#{$elementmargintb} / 2) auto 0 auto;
+}
+div.medwidth {
+  width: 75%;
+  margin: 0 auto;
+}
+div { // markdown does not generate divs as far as i can tell, this is for photogalleries etc.
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
 }
 
 // MAIN CONTAINED ELEMENTS /////////////////////////////////////////////////////////////////////////////
@@ -84,7 +87,10 @@ h2 {
   color: $colororange;
   font-size: 1.6em;
   // margin: calc(#{$elementmargintb} / 1) 0;
-  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+  margin: calc(#{$elementmargintb} * 1.5) 0 0 0;
+}
+h2:first-child {
+  margin-top: 0;
 }
 h3 {
   @include replace-bgcolor($colorbg, $colortoggle);
@@ -100,7 +106,7 @@ h4, h5, h6 {
 }
 p { // markdown turns lines (including images) into p
   @include replace-bgcolor($colorbox2, $colortoggle);
-  margin: calc(#{$elementmargintb} / 2) 0 0 0;
+  margin: calc(#{$elementmargintb} / 4) 0 0 0;
 }
 p, li { // line height of normal text
   line-height: $lineheight;
@@ -238,7 +244,7 @@ nav { // horizontal navbar
     height: 1em;
   }
   a.current { // "current" class for highlighting navigation
-      color: $colorwhite;
+    color: $colorwhite;
   }
   a:link:not(.current) { // :link = pseudoclass unvisited
    color: $colorpurple;
@@ -252,6 +258,54 @@ nav { // horizontal navbar
   a:active:not(.current) { // :active = pseudoclass being clicked
    color: $colorred;
   }
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbutton {
+  color: $colorpurple;
+  // background: green;
+}
+.dropcontent {
+  @include replace-bgcolor($colorwhite, $colortoggle);
+  background: transparent;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5em 0 0 0;
+  min-width: 10em;
+  z-index: 1;
+  text-align: left;
+  a {
+    background: black;
+    display: block;
+    padding: 0.2em;
+  }
+}
+.dropdown:hover .dropcontent {
+  display: block;
+}
+.dropcontent2 { // bottom nav, content goes up
+  @include replace-bgcolor($colorwhite, $colortoggle);
+  background: transparent;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 1.5em 0;
+  min-width: 10em;
+  z-index: 1;
+  text-align: left;
+  a {
+    background: black;
+    display: block;
+    padding: 0.2em;
+  }
+}
+.dropdown:hover .dropcontent2 { // bottom nav, content goes up
+  display: block;
 }
 
 // GALLERY ELEMENTS /////////////////////////////////////////////////////////////////////////////
@@ -301,7 +355,7 @@ nav { // horizontal navbar
   filter: contrast(100%);
   transition: $transition;
 }
-// LIGHTBOX https://codeconvey.com/pure-css-lightbox/
+// LIGHTBOX
 .state { // for the checkbox itself
   display: none;
 }

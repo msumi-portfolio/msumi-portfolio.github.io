@@ -7,9 +7,13 @@
   link: /character.html
 - name: STORYBOARD
   link: /storyboard.html
-- name: COMICS
-  link: /comics.html
-- name: TRADITIONAL
-  link: /traditional.html
+- name: MORE
+  options:
+    - name: "- COMICS"
+      link: /comics.html
+    - name: "- ANIMATION"
+      link: /animation.html
+    - name: "- TRADITIONAL"
+      link: /traditional.html
 - name: CONTACT
   link: /contact.html

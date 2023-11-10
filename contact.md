@@ -10,6 +10,14 @@ title: contact
 
 ## site credits
 
-built from scratch by me!
+coded by me! :^)
 
-hosted on github pages
+static site built with [jekyll](https://jekyllrb.com/)
+
+hosted on [github pages](https://pages.github.com/)
+
+css lightbox edited from [Ashfaq Ahmed](https://codeconvey.com/pure-css-lightbox/)
+
+[w3schools](https://www.w3schools.com/) for reference
+
+no javascript

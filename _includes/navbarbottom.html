@@ -1,0 +1,27 @@
+<!-- horizontal navigation bar source code -->
+<nav>
+  {% for item in site.data.navigation %}
+
+  {% if item.options %}
+    <span class="dropdown">
+      <span class="dropbutton">
+        {{ item.name }} <!-- breaking the a into 3 lines adds a space after the link name for some reason, but it doesn't affect the actual navbar spacing -->
+      </span>
+      <div class="dropcontent2"> <!-- content goes up instead of down -->
+        {% for option in item.options %}
+          <a href="{{ option.link }}">{{ option.name }}</a>
+        {% endfor %}
+      </div>
+    </span>
+  {% else %}
+    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+      {{ item.name }} <!-- breaking the a into 3 lines adds a space after the link name for some reason, but it doesn't affect the actual navbar spacing -->
+    </a>
+  {% endif %}
+
+  {% if forloop.last == false %} <!-- add image after every link except last -->
+  /
+  {% endif %}
+
+  {% endfor %}
+</nav>
