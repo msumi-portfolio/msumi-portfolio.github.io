@@ -1,0 +1,23 @@
+<!-- gallery source code -->
+
+<div class="medwidth">
+  <div class="gallerynew">
+    <div class="column3">
+    {% for category in page.gallery %}
+      {% if category[0] == include.category %}
+        {% for item in category[1] %}
+          <div class="galleryitemnew">
+            <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}">
+            </label>
+            <input type="checkbox" class="state" id="{{ item.name }}"/>
+            <label class="lightbox" for="{{ item.name }}">
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}">
+            </label>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+</div>

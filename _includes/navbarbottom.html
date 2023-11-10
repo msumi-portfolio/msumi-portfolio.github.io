@@ -7,7 +7,7 @@
       <span class="dropbutton">
         {{ item.name }} <!-- breaking the a into 3 lines adds a space after the link name for some reason, but it doesn't affect the actual navbar spacing -->
       </span>
-      <div class="dropcontent2"> <!-- content goes up instead of down -->
+      <div class="dropcontentup"> <!-- content goes up instead of down -->
         {% for option in item.options %}
           <a href="{{ option.link }}">{{ option.name }}</a>
         {% endfor %}

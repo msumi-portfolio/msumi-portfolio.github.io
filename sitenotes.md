@@ -24,10 +24,9 @@
 - header and normal text
 
 (all images can click to expand)
-- standard image gallery: 2 column responsive
+- ✅ standard image gallery: 2 column responsive
 - full width image
-- video/storyboard presenter
-  - google slides
-  - convert pdf to ppt https://www.adobe.com/acrobat/online/pdf-to-ppt.html
+- ✅ video/storyboard presenter
+  - google slides: convert pdf to ppt https://www.adobe.com/acrobat/online/pdf-to-ppt.html
 
 {% endraw %}

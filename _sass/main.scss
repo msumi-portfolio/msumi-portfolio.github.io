@@ -262,49 +262,35 @@ nav { // horizontal navbar
 .dropdown {
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 .dropbutton {
   color: $colorpurple;
   // background: green;
 }
+.dropcontent, .dropcontentup {
+  @include replace-bgcolor($colorwhite, $colortoggle);
+  background: transparent;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: -3em; // equal left and right -> centered (with no min-width)
+  right: -3em;
+  a {
+    background: black;
+    display: block;
+    padding: 0.2em;
+  }
+}
 .dropcontent {
-  @include replace-bgcolor($colorwhite, $colortoggle);
-  background: transparent;
-  display: none;
-  position: absolute;
   top: 0;
-  left: 0;
   padding: 0.5em 0 0 0;
-  min-width: 10em;
-  z-index: 1;
-  text-align: left;
-  a {
-    background: black;
-    display: block;
-    padding: 0.2em;
-  }
 }
-.dropdown:hover .dropcontent {
-  display: block;
-}
-.dropcontent2 { // bottom nav, content goes up
-  @include replace-bgcolor($colorwhite, $colortoggle);
-  background: transparent;
-  display: none;
-  position: absolute;
+.dropcontentup { // on bottom nav, content goes up
   bottom: 0;
-  left: 0;
   padding: 0 0 1.5em 0;
-  min-width: 10em;
-  z-index: 1;
-  text-align: left;
-  a {
-    background: black;
-    display: block;
-    padding: 0.2em;
-  }
 }
-.dropdown:hover .dropcontent2 { // bottom nav, content goes up
+.dropdown:hover .dropcontent, .dropdown:hover .dropcontentup {
   display: block;
 }
 
@@ -376,8 +362,6 @@ nav { // horizontal navbar
     width: 100%;
   }
  }
-
-
 
 
 

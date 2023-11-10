@@ -6,18 +6,18 @@ title: contact
   <img src="{{ '/assets/images/icon.png' | relative_url }}">
 </div>
 
-<makenasumi@gmail.com>
+email: <makenasumi@gmail.com>
 
 ## site credits
 
-coded by me! :^)
+\* coded by me! :^)
 
-static site built with [jekyll](https://jekyllrb.com/)
+\* static site built with [Jekyll](https://jekyllrb.com/)
 
-hosted on [github pages](https://pages.github.com/)
+\* hosted on [Github Pages](https://pages.github.com/)
 
-css lightbox edited from [Ashfaq Ahmed](https://codeconvey.com/pure-css-lightbox/)
+\* css lightbox edited from [Ashfaq Ahmed](https://codeconvey.com/pure-css-lightbox/)
 
-[w3schools](https://www.w3schools.com/) for reference
+\* [W3Schools](https://www.w3schools.com/) for reference
 
-no javascript
+\* no javascript
