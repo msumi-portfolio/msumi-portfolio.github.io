@@ -14,12 +14,11 @@
 - fixing up flex gallery
 
 ## 2 column layout
-  1. ✅ 1 data list, each item has 1st/2nd variable? alternate
-    - 2 column: print column if var matches
-    - 1 column: print straight through regardless of var (use different layout based on screen width)
-  2. ❌ 2 data lists, 1st/2nd
-    - 2 column: print one list per column
-    - 1 column: they'd simply stack? don't think you could alternate
+- ✅ 1 data list, each item has 1st/2nd variable, alternating
+  - 2 column: print column if var matches
+  - 1 column: print straight through regardless of var
+- change layouts based on screen width: show/hide entire layout
+- having duplicate checkbox/lightbox code in both shown and hidden sections caused problems, so i moved it to its own separate for loop 👍
 
 ## item types
 - header and normal text
@@ -28,5 +27,7 @@
 - standard image gallery: 2 column responsive
 - full width image
 - video/storyboard presenter
+  - google slides
+  - convert pdf to ppt https://www.adobe.com/acrobat/online/pdf-to-ppt.html
 
 {% endraw %}

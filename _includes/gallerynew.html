@@ -1,44 +1,73 @@
 <!-- gallery source code -->
 
-<div class="gallerynew">
-
-<div class="column1">
-{% for item in page.gallery %} <!-- open up data -->
-{% if item.column == 1 %}
-  <div class="galleryitemnew">
-    <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.description }}" title="{{ item.description }}" class="gallerypic">
-    <label for="{{ item.name }}"> <!-- use "label" to turn entire object into checkbox button -->
-      <div class="galleryoverlay">
-        <div class="gallerytext">
-          <h2>{{ item.name }}</h2>
-          <p>{{ item.description }}</p>
-        </div>
+<!-- if widescreen, show wide version -->
+<div class="wide">
+  <div class="gallerynew">
+    <div class="column1">
+    {% for item in page.gallery %}
+    {% if item.column == 1 %}
+      <div class="galleryitemnew">
+        <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
+        <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+          <div class="galleryoverlay">
+            <div class="gallerytext">
+              <h2>{{ item.name }}</h2>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </label>
       </div>
-    </label>
-    <input type="checkbox" class="state" id="{{ item.name }}"/>
-    <aside class="lightbox">
-      <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.description }}" title="{{ item.description }}">
-    </aside>
-    <label class="backdrop" for="{{ item.name }}"></label> <!-- use "label" to turn entire object into checkbox button -->
-  </div>
-{% endif %}
-{% endfor %}
-</div>
+    {% endif %}
+    {% endfor %}
+    </div>
 
-<div class="column2">
-{% for item in page.gallery %} <!-- open up data -->
-{% if item.column == 2 %}
-  <div class="galleryitemnew">
-    <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.description }}" title="{{ item.description }}" class="gallerypic">
-    <div class="galleryoverlay">
-      <div class="gallerytext">
-        <h2>{{ item.name }}</h2>
-        <p>{{ item.description }}</p>
+    <div class="column2">
+    {% for item in page.gallery %}
+    {% if item.column == 2 %}
+      <div class="galleryitemnew">
+        <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
+        <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+          <div class="galleryoverlay">
+            <div class="gallerytext">
+              <h2>{{ item.name }}</h2>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </label>
       </div>
+    {% endif %}
+    {% endfor %}
     </div>
   </div>
-{% endif %}
-{% endfor %}
 </div>
 
+
+<!-- if narrowscreen, show narrow version -->
+<div class="narrow">
+  <div class="gallerynew">
+    <div class="column3">
+    {% for item in page.gallery %}
+      <div class="galleryitemnew">
+        <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
+        <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+          <div class="galleryoverlay">
+            <div class="gallerytext">
+              <h2>{{ item.name }}</h2>
+              <p>{{ item.description }}</p>
+            </div>
+          </div>
+        </label>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
 </div>
+
+
+<!-- show lightbox regardless of version -->
+{% for item in page.gallery %}
+  <input type="checkbox" class="state" id="{{ item.name }}"/>
+  <label class="lightbox" for="{{ item.name }}">
+    <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
+  </label>
+{% endfor %}

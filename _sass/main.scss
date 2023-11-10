@@ -128,6 +128,7 @@ img {
   vertical-align: bottom; // displays as inline-block by default which creates The Gap
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain; // don't stretch
 }
 ul, ol { // for markdown again
   margin: calc(#{$elementmargintb} / 2) 0 0 0;
@@ -179,8 +180,8 @@ ol { // ordered list marker styling
 }
 hr { // divider
   width: 80%;
-  border: 1.5px solid $colorblue;
-  // border-radius: 20px;
+  // border: 1.5px solid $colorblue;
+  border: none;
   margin: calc(#{$elementmargintb} / 1) auto;
 }
 audio {
@@ -215,11 +216,6 @@ header {
   height: 2em;
   text-align: center;
   margin: 0;
-  img { // needs adjustment
-    // height: 100%;
-    // display: block; // link takes up full image size
-    // margin: auto; // center
-  }
 }
 footer {
   // background: $colorbox1;
@@ -232,7 +228,7 @@ footer {
   }
 }
 nav { // horizontal navbar
-  // background: $colorbox2;
+  @include replace-bgcolor($colorbox2, $colortoggle);
   font-size: 1.2em;
   max-width: 100%;
   margin-top: $gapheight;
@@ -259,7 +255,81 @@ nav { // horizontal navbar
 }
 
 // GALLERY ELEMENTS /////////////////////////////////////////////////////////////////////////////
-// flex version
+// GALLERYNEW: sort images into 2 columns (also uses styles from regular gallery)
+.wide { // show widescreen (change in responsive)
+  display: block;
+}
+.narrow { // hide narrowscreen (change in responsive)
+  display: none;
+}
+.gallerynew { // whole thing
+  margin: -2% 0; // offset galleryitemnew top and bottom margin
+  display: flex;
+  justify-content: space-between; // columns are pushed to left and right
+}
+.column1 {
+  margin: 0;
+  width: 50%; // want precise 1/2 rather than 49% which could screw up consistency
+  padding: 0 1% 0 0;
+}
+.column2 {
+  margin: 0;
+  width: 50%; // want precise 1/2 rather than 49% which could screw up consistency
+  padding: 0 0 0 1%;
+}
+.column3 { // for single column/narrowscreen
+  margin: 0;
+  width: 100%;
+}
+.galleryitemnew { // container for picture, overlay, and text
+  margin: 4% 0;
+  position: relative;
+  width: 100%;
+}
+.galleryitemnew:hover .galleryoverlay { // when item is hovered, change these overlay settings
+  opacity: 1;
+  transition: $transition;
+}
+.galleryitemnew .galleryoverlay { // when item is un-hovered, change these overlay settings
+  transition: $transition;
+}
+.galleryitemnew:hover .gallerypic { // when item is hovered, change these pic settings
+  filter: contrast(50%);
+  transition: $transition;
+}
+.galleryitemnew .gallerypic { // when item is un-hovered, change these pic settings
+  filter: contrast(100%);
+  transition: $transition;
+}
+// LIGHTBOX https://codeconvey.com/pure-css-lightbox/
+.state { // for the checkbox itself
+  display: none;
+}
+.lightbox { // unchecked
+  display: none;
+}
+.state:checked ~ .lightbox { // checked
+  z-index: 1;
+  background: rgba(0,0,0,0.7);
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+ }
+
+
+
+
+
+
+
+// OLD FLEX VERSION
 .gallery { // whole thing
   margin: 0;
   display: flex;
@@ -307,77 +377,4 @@ nav { // horizontal navbar
   h2 {
     margin: 0;
   }
-}
-
-// GALLERYNEW: sort images into 2 columns (also uses styles from regular gallery)
-.gallerynew { // whole thing
-  margin: -2% 0; // offset galleryitemnew top and bottom margin
-  display: flex;
-  // flex-wrap: wrap;
-  justify-content: space-between; // columns are pushed to left and right
-}
-.galleryitemnew { // container for picture, overlay, and text
-  margin: 4% 0 4% 0;
-  position: relative;
-  width: 100%;
-}
-.galleryitemnew:hover .galleryoverlay { // when item is hovered, change these overlay settings
-  opacity: 1;
-  transition: $transition;
-}
-.galleryitemnew .galleryoverlay { // when item is un-hovered, change these overlay settings
-  transition: $transition;
-}
-.galleryitemnew:hover .gallerypic { // when item is hovered, change these pic settings
-  filter: contrast(50%);
-  transition: $transition;
-}
-.galleryitemnew .gallerypic { // when item is un-hovered, change these pic settings
-  filter: contrast(100%);
-  transition: $transition;
-}
-.column1 {
-  margin: 0;
-  width: 49%;
-  justify-content: space-around;
-}
-.column2 {
-  margin: 0;
-  width: 49%;
-}
-// LIGHTBOX https://codeconvey.com/pure-css-lightbox/
-.state { // for the checkbox itself
-  display: none;
-  // display: fixed;
-}
-.lightbox { // unchecked
-  display: none;
-}
-.backdrop { // unchecked
-  display: none;
-}
-.state:checked ~ .lightbox {
-  z-index: 2;
-  background-color: orange;
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  max-height: 90%;
-  max-width: 90%;
- }
-.state:checked ~ .backdrop {
-  z-index: 1;
-  background-color: rgba(200, 0, 0, 0.5);
-  border: 10px;
-  display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 1;
-  transition: 0.3s opacity ease-in-out;
 }

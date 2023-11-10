@@ -29,7 +29,7 @@
     }
   }
   nav { // horizontal navbar
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   div.buffer { // remove buffers
     display: none;
@@ -40,39 +40,15 @@
   div.flex {
     flex-direction: column;
   }
-  div.indexmain { // index main content
-    max-width: 100%;
-    margin: 0;
-  }
-  aside.indexside { // index side content, same properties as wiki infobox
-    max-width: 100%;
-    margin: $boxpadding 0 0 0; // layout spacing, so keep as $boxpadding
-    flex-basis: 0; // initial length (height)
-    align-self: stretch; // default is stretch, but without this it shrinks, maybe because max-width != width
-  }
 
-  // WIKI ////////////////////////////////////////////////////////////////
-  .wikibody {
-    order: 2;
-    max-width: 100%;
-    margin: $boxpadding 0 0 0; // layout spacing, so keep as $boxpadding
+  // GALLERY ///////////////////////////////////////////////////////////////
+  .wide { // hide widescreen
+    display: none;
   }
-  aside.infobox { // wiki info box
-    order: 1;
-    max-width: 100%;
-    margin: 0;
-    flex-basis: 0; // initial length (height)
-    align-self: stretch; // default is stretch, but without this it shrinks, maybe because max-width != width
+  .narrow { // show narrowscreen
+    display: block;
   }
-
-  // GALLERY ////////////////////////////////////////////////////////////////
-  .column { // gallery = 2 columns
-    flex: 50%;
-    max-width: 50%;
-    // flex: 100%; // 1 column
-    // max-width: 100%;
-  }
-  .galleryitem { // container for picture, overlay, and text
-    width: 100%;
+  .gallerynew {
+    margin: -4% 0; // compensating for the galleryitemnew 50%width -> 100%width when 2column -> 1column
   }
 }

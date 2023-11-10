@@ -7,3 +7,9 @@ title: contact
 </div>
 
 <makenasumi@gmail.com>
+
+## site credits
+
+built from scratch by me!
+
+hosted on github pages
