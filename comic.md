@@ -37,4 +37,4 @@ fanart
 
 inspired by the short story, original
 
-{% include galleryplain.html category="swans" %}
+{% include galleryplain.html category="swans" loading="lazy" %}

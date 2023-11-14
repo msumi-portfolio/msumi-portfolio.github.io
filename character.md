@@ -15,11 +15,11 @@ gallery:
     filename: volumes pigtails.png
     description: "'Roots' short film, design by @kijame.illustration on instagram"
     column: 1
-  - name: Rowdy Flier
+  - name: Rowdy Flier Pose
     filename: chardesign_crop_hero c.jpg
     description: original
     column: 2
-  - name: Rowdy Flier
+  - name: Rowdy Flier Expressions
     filename: chardesign_crop_expressions c.jpg
     description: original
     column: 1

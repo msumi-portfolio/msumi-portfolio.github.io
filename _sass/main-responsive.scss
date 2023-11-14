@@ -41,7 +41,7 @@
     flex-direction: column;
   }
   div.medwidth {
-    width: 100%;
+    padding: 0;
   }
 
   // GALLERY ///////////////////////////////////////////////////////////////
@@ -50,8 +50,5 @@
   }
   .narrow { // show narrowscreen
     display: block;
-  }
-  .gallerynew {
-    margin: -4% 0; // compensating for the galleryitemnew 50%width -> 100%width when 2column -> 1column
   }
 }
