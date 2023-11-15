@@ -1,0 +1,43 @@
+<!-- 2 column gallery (WITHOUT overlay) that stays 2 column -->
+
+<div class="gallerynew">
+  <div class="column1">
+  {% for category in page.gallery %}
+    {% if category[0] == include.category %}
+      {% for item in category[1] %}
+        {% if item.column == 1 %}
+          <div class="galleryitemnew">
+            <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" {% if include.loading == "lazy" %}loading="lazy"{% endif %}>
+            </label>
+            <input type="checkbox" class="state" id="{{ item.name }}"/>
+            <label class="lightbox" for="{{ item.name }}">
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}">
+            </label>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  </div>
+
+  <div class="column2">
+  {% for category in page.gallery %}
+    {% if category[0] == include.category %}
+      {% for item in category[1] %}
+        {% if item.column == 2 %}
+          <div class="galleryitemnew">
+            <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" {% if include.loading == "lazy" %}loading="lazy"{% endif %}>
+            </label>
+            <input type="checkbox" class="state" id="{{ item.name }}"/>
+            <label class="lightbox" for="{{ item.name }}">
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}">
+            </label>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  </div>
+</div>

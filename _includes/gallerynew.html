@@ -1,41 +1,50 @@
-<!-- gallery source code -->
+<!-- 2 column gallery (WITH overlay) -->
+<!-- all data categories must be featured on the page, or else a lightbox error occurs -->
 
 <!-- if widescreen, show wide version -->
 <div class="wide">
   <div class="gallerynew">
     <div class="column1">
-    {% for item in page.gallery %}
-    {% if item.column == 1 %}
-      <div class="galleryitemnew">
-        <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
-        <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
-          <div class="galleryoverlay">
-            <div class="gallerytext">
-              <h2>{{ item.name }}</h2>
-              <p>{{ item.description }}</p>
+    {% for category in page.gallery %}
+      {% if category[0] == include.category %}
+        {% for item in category[1] %}
+          {% if item.column == 1 %}
+            <div class="galleryitemnew">
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic" {% if include.loading == "lazy" %}loading="lazy"{% endif %}>
+              <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+                <div class="galleryoverlay">
+                  <div class="gallerytext">
+                    <h2>{{ item.name }}</h2>
+                    <p>{{ item.description }}</p>
+                  </div>
+                </div>
+              </label>
             </div>
-          </div>
-        </label>
-      </div>
-    {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     {% endfor %}
     </div>
 
     <div class="column2">
-    {% for item in page.gallery %}
-    {% if item.column == 2 %}
-      <div class="galleryitemnew">
-        <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
-        <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
-          <div class="galleryoverlay">
-            <div class="gallerytext">
-              <h2>{{ item.name }}</h2>
-              <p>{{ item.description }}</p>
+    {% for category in page.gallery %}
+      {% if category[0] == include.category %}
+        {% for item in category[1] %}
+          {% if item.column == 2 %}
+            <div class="galleryitemnew">
+              <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic" {% if include.loading == "lazy" %}loading="lazy"{% endif %}>
+              <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+                <div class="galleryoverlay">
+                  <div class="gallerytext">
+                    <h2>{{ item.name }}</h2>
+                    <p>{{ item.description }}</p>
+                  </div>
+                </div>
+              </label>
             </div>
-          </div>
-        </label>
-      </div>
-    {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
     {% endfor %}
     </div>
   </div>
@@ -46,18 +55,22 @@
 <div class="narrow">
   <div class="gallerynew">
     <div class="column3">
-    {% for item in page.gallery %}
-      <div class="galleryitemnew">
-        <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
-        <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
-          <div class="galleryoverlay">
-            <div class="gallerytext">
-              <h2>{{ item.name }}</h2>
-              <p>{{ item.description }}</p>
-            </div>
+    {% for category in page.gallery %}
+      {% if category[0] == include.category %}
+        {% for item in category[1] %}
+          <div class="galleryitemnew">
+            <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic" {% if include.loading == "lazy" %}loading="lazy"{% endif %}>
+            <label for="{{ item.name }}"> <!-- use "label" to turn entire overlay into checkbox button -->
+              <div class="galleryoverlay">
+                <div class="gallerytext">
+                  <h2>{{ item.name }}</h2>
+                  <p>{{ item.description }}</p>
+                </div>
+              </div>
+            </label>
           </div>
-        </label>
-      </div>
+        {% endfor %}
+      {% endif %}
     {% endfor %}
     </div>
   </div>
@@ -65,9 +78,11 @@
 
 
 <!-- show lightbox regardless of version -->
-{% for item in page.gallery %}
+{% for category in page.gallery %}
+  {% for item in category[1] %}
   <input type="checkbox" class="state" id="{{ item.name }}"/>
   <label class="lightbox" for="{{ item.name }}">
     <img src="{{ '/assets/images/' | append: page.gallerydir | append: '/' | append: item.filename | relative_url }}" alt="{{ item.name }}" title="{{ item.name }}" class="gallerypic">
   </label>
+  {% endfor %}
 {% endfor %}

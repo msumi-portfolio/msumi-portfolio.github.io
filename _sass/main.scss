@@ -303,17 +303,17 @@ main+nav { // for bottom nav, first "nav immediately after main"
   display: none;
 }
 .gallerynew { // whole thing
-  margin: 0; // offset galleryitemnew top and bottom margin
+  margin: calc(#{$elementmargintb} / 2) 0 0 0;
   display: flex;
   justify-content: space-between; // columns are pushed to left and right
 }
 .column1 {
-  margin: -2% 0;
+  margin: -2% 0; // offset galleryitemnew top and bottom margin
   width: 50%; // want precise 1/2 rather than 49% which could screw up consistency
   padding: 0 1% 0 0;
 }
 .column2 {
-  margin: -2% 0;
+  margin: -2% 0; // offset galleryitemnew top and bottom margin
   width: 50%; // want precise 1/2 rather than 49% which could screw up consistency
   padding: 0 0 0 1%;
 }
