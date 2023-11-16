@@ -33,7 +33,7 @@ animation by me
 
 lupin iii, fanart
 
-{% include galleryplain.html category="headturn" loading="lazy" %}
+{% include galleryplain.html category="headturn" %}
 
 ## Jump and Run Cycle
 
