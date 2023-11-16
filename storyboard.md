@@ -23,6 +23,12 @@ gallery:
     - name: rosenwall2
       filename: rosenwall3.png
       column: 2
+    - name: rosenwall3
+      filename: rosenwall11.png
+      column: 1
+    - name: rosenwall4
+      filename: rosenwall5.png
+      column: 2
 
 ---
 
@@ -47,6 +53,8 @@ rough boards, original
 
 boarded 0:00-0:24 and 2:10-2:24
 
+one-month group animatic, original
+
 <div class="medwidth">
   <div class="iframecontainer">
     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSI_FV3ZMrKPsQg-LbU25_GCp854OBtFVJ_lDrV2UvUjNRuxvEo3BWkhb_H2QUpfzAcnmQp2EsGc7Lg/embed" allowfullscreen="true"></iframe>
@@ -56,7 +64,7 @@ boarded 0:00-0:24 and 2:10-2:24
     <iframe src="https://www.youtube.com/embed/gYCeVFCw4Qw" title="call of the aisle animatic" allow="fullscreen"></iframe>
   </div>
 
-{% include gallerynewnooverlay.html category="call" %}
+{% include gallerynewnooverlay.html category="call" loading="lazy" %}
 
 </div>
 

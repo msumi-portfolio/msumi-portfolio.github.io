@@ -74,7 +74,10 @@ div { // markdown does not generate divs as far as i can tell, this is for photo
 h1 {
   @include replace-bgcolor($colorbox3, $colortoggle);
   color: $coloryellow;
-  font-family: handwritten;
+  // font-family: 'M PLUS Code Latin', monospace;
+  // font-family: pixeltitle;
+  // font-family: 'Slabo 13px', serif;
+  font-family: 'Sanchez', serif;
   font-size: 2.2em;
   text-align: center;
   // display: inline-block;

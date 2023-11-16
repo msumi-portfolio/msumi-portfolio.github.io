@@ -10,7 +10,7 @@ gallery:
       column: 1
     - name: Lupin III Tart
       filename: GOURMET FINAL c.jpg
-      description: zine illustration, fanart
+      description: artbook illustration, fanart
       column: 2
     - name: Lupin III Reveal
       filename: smash bros collab loop announce c.jpg
@@ -18,7 +18,7 @@ gallery:
       column: 1
     - name: Lupin III Halfpipe
       filename: between heists CROP 8.5 c.jpg
-      description: zine illustration, fanart
+      description: artbook illustration, fanart
       column: 2
     - name: "'Incompleteness' Triptych"
       filename: tryptich combined small margin c.jpg
