@@ -18,7 +18,7 @@ email: <makenasumi@gmail.com>
 
 \* css lightbox edited from [Ashfaq Ahmed](https://codeconvey.com/pure-css-lightbox/)
 
-\* PT Mono and Sanchez from [Google Fonts](https://fonts.google.com/specimen/PT+Mono)
+\* PT Mono and Sanchez from [Google Fonts](https://fonts.google.com/)
 
 \* [W3Schools](https://www.w3schools.com/) for reference
 
