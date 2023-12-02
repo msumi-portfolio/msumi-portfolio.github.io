@@ -29,6 +29,20 @@ gallery:
     - name: rosenwall4
       filename: rosenwall5.png
       column: 2
+  roots:
+    - name: roots1
+      filename: roots1.png
+      column: 1
+    - name: roots2
+      filename: roots2.png
+      column: 2
+    - name: roots3
+      filename: roots3.png
+      column: 1
+    - name: roots4
+      filename: roots4.png
+      column: 2
+
 
 ---
 
@@ -49,11 +63,32 @@ rough boards, original
 
 </div>
 
+## Roots
+
+revised all boards except title 0:00-0:08
+
+boarded 0:08-1:01, 2:08-2:37, 2:51-3:16, 4:17-4:36
+
+group short film
+
+<div class="medwidth">
+  <div class="iframecontainer">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT3We30maidRmaoFuFTCadCDEQtsn8_szcpMvEarl38qH-S-fxDsaLuurOmr6uEdSurxNW6UxlMKQVb/embed" allowfullscreen="true"></iframe>
+  </div>
+
+  <div class="iframecontainer">
+    <iframe src="https://www.youtube.com/embed/0zFEcYs-Yjs" title="roots animatic" allow="fullscreen"></iframe>
+  </div>
+
+{% include gallerynewnooverlay.html category="roots" %}
+
+</div>
+
 ## Call of the Aisle
 
 boarded 0:00-0:24 and 2:10-2:24
 
-one-month group animatic, original
+one-month group animatic
 
 <div class="medwidth">
   <div class="iframecontainer">

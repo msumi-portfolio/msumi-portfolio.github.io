@@ -6,15 +6,15 @@ gallery:
   character:
     - name: Isabel Turnaround
       filename: volumes isabel longhair.png
-      description: "'Roots' short film, designed by @kijame.illustration on instagram"
+      description: "'Roots' group short film, designed by @kijame.illustration on instagram"
       column: 1
     - name: Don Turnaround
       filename: volumes don.png
-      description: "'Roots' short film, designed by @kijame.illustration on instagram"
+      description: "'Roots' group short film, designed by @kijame.illustration on instagram"
       column: 2
     - name: Pigtails Turnaround
       filename: volumes pigtails.png
-      description: "'Roots' short film, designed by @kijame.illustration on instagram"
+      description: "'Roots' group short film, designed by @kijame.illustration on instagram"
       column: 1
     - name: Rowdy Flier Pose
       filename: chardesign_crop_hero c.jpg
