@@ -6,10 +6,21 @@ gallery:
   floursack:
     - name: floursack jump
       filename: floursack.gif
-  headturn:
-    - name: headturn wip
-      filename: fujikowip.gif
 ---
+
+## "Roots" Stop Motion Animation Reel
+
+i was not responsible for the sets, post production, etc.
+
+animation by me
+
+group short film
+
+<div class="medwidth">
+  <div class="iframecontainer">
+    <iframe src="https://www.youtube.com/embed/vWfSoTS3sik" title="roots animation reel" allow="fullscreen"></iframe>
+  </div>
+</div>
 
 ## "Reanimated" Collab
 
@@ -25,15 +36,19 @@ lupin iii, fanart
   </div>
 </div>
 
-## Headturn WIP
+## "Reanimated" Headturn Collab
 
-boards, design by Amadeus
+boards, design, colors by Amadeus
 
-animation by me
+colors, animation, post-production by me
 
 lupin iii, fanart
 
-{% include galleryplain.html category="headturn" %}
+<div class="medwidth">
+  <div class="iframecontainer">
+    <iframe src="https://www.youtube.com/embed/G-FVwrotvoo" title="headturn collab" allow="fullscreen"></iframe>
+  </div>
+</div>
 
 ## Jump and Run Cycle
 

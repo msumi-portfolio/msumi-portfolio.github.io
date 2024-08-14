@@ -9,10 +9,10 @@
   link: /storyboard.html
 - name: MORE
   options:
-    - name: "COMIC"
-      link: /comic.html
     - name: "ANIMATION"
       link: /animation.html
+    - name: "COMIC"
+      link: /comic.html
     - name: "TRADITIONAL"
       link: /traditional.html
 - name: CONTACT
