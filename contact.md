@@ -8,7 +8,7 @@ title: contact
 
 email: <makenasumi@gmail.com>
 
-## site credits
+## Site Credits
 
 \* coded by me! :^)
 
