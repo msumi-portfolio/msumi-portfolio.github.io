@@ -21,7 +21,7 @@ email: <makenasumi@gmail.com>
 
 \* static site built with [Jekyll](https://jekyllrb.com/)
 
-\* hosted on [Github Pages](https://pages.github.com/)
+\* hosted on [GitHub Pages](https://pages.github.com/)
 
 \* css lightbox edited from [Ashfaq Ahmed](https://codeconvey.com/pure-css-lightbox/)
 
