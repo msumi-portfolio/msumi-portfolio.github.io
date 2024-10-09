@@ -8,14 +8,14 @@ title: contact
 
 email: <makenasumi@gmail.com>
 
-## about
+## About
 
-<div style="padding:0 15%">
+<div class="textbox">
   <p>i'm a digital artist who loves funky, dynamic shapes and nonsensical gags.</p>
   <p>my interests include video games as an interdisciplinary and uniquely interactive medium, the power of friendship, and stories that combine serious weight with goofy, absurd comedy.</p>
 </div>
 
-## site credits
+## Site Credits
 
 \* coded by me! :^)
 
