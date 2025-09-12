@@ -6,13 +6,10 @@ gallery:
   floursack:
     - name: floursack jump
       filename: floursack.gif
+      alt: 2D floursack jump and bounce
 ---
 
 ## "Roots" Stop Motion Animation Reel
-
-i was not responsible for the sets, post production, etc.
-
-animation by me
 
 group short film
 

@@ -12,9 +12,7 @@ body { // put overall styles here
   // backgrounds controlled by default layout/page.background/data.backgrounds presets
   // cursor: url("/assets/images/cursor.png"), default;
   color: $colorwhite;
-  // font-family: 'M PLUS Code Latin', monospace;
-  // font-family: 'Sanchez', serif;
-  font-family: 'PT Mono', monospace;
+  font-family: 'PT Mono Regular', monospace;
   font-size: 120%; // sets base size for em to use
   margin: 0; // full screen
   min-height: 100%; // full screen
@@ -78,10 +76,7 @@ div { // markdown does not generate divs as far as i can tell, this is for photo
 h1 {
   @include replace-bgcolor($colorbox3, $colortoggle);
   color: $coloryellow;
-  // font-family: 'M PLUS Code Latin', monospace;
-  // font-family: pixeltitle;
-  // font-family: 'Slabo 13px', serif;
-  font-family: 'Sanchez', serif;
+  font-family: 'Lexend Peta Black', sans-serif;
   font-size: 2.2em;
   text-align: center;
   // display: inline-block;
@@ -302,7 +297,7 @@ main+nav { // for bottom nav, first "nav immediately after main"
 }
 
 // GALLERY ELEMENTS /////////////////////////////////////////////////////////////////////////////
-// GALLERYNEW: sort images into 2 columns (also uses styles from regular gallery)
+// GALLERYNEW: sort images into 2 columns
 .wide { // show widescreen (change in responsive)
   display: block;
 }
@@ -315,23 +310,28 @@ main+nav { // for bottom nav, first "nav immediately after main"
   justify-content: space-between; // columns are pushed to left and right
 }
 .column1 {
-  margin: -2% 0; // offset galleryitemnew top and bottom margin
+  margin: -2% 0; // offset galleryitemnew top and bottom margin, galleryitemnew will be 1/2 size so only 1/2 margin amount needed
   width: 50%; // want precise 1/2 rather than 49% which could screw up consistency
   padding: 0 1% 0 0;
 }
 .column2 {
-  margin: -2% 0; // offset galleryitemnew top and bottom margin
+  margin: -2% 0; // offset galleryitemnew top and bottom margin, galleryitemnew will be 1/2 size so only 1/2 margin amount needed
   width: 50%; // want precise 1/2 rather than 49% which could screw up consistency
   padding: 0 0 0 1%;
 }
 .column3 { // for single column/narrowscreen
-  margin: -4% 0;
+  margin: -4% 0; // offset galleryitemnew top and bottom margin
   width: 100%;
 }
 .galleryitemnew { // container for picture, overlay, and text
   margin: 4% 0;
   position: relative;
   width: 100%;
+}
+.gallerypic { // picture
+  display: block;
+  width: 100%;
+  align-self: center;
 }
 .galleryitemnew:hover .galleryoverlay { // when item is hovered, change these overlay settings
   opacity: 1;
@@ -348,6 +348,33 @@ main+nav { // for bottom nav, first "nav immediately after main"
   filter: contrast(100%);
   transition: $transition;
 }
+.galleryoverlay { // overlay
+  margin: 0;
+  background: rgba(0,20,20,0.7);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+.gallerytext { // overlay text
+  margin: 0;
+  position: absolute;
+  top: 50%; // center
+  left: 50%; // center
+  transform: translate(-50%, -50%); // compensate for element width/height
+  -webkit-transform: translate(-50%, -50%); // chrome, safari, etc.
+  -ms-transform: translate(-50%, -50%); // internet explorer
+  text-align: center;
+  width: 80%;
+  h2 {
+    margin: 0;
+  }
+}
+
 // LIGHTBOX
 .state { // for the checkbox itself
   display: none;
@@ -369,57 +396,3 @@ main+nav { // for bottom nav, first "nav immediately after main"
     width: 100%;
   }
  }
-
-
-
-
-
-// OLD FLEX VERSION
-.gallery { // whole thing
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-.galleryitem { // container for picture, overlay, and text
-  margin: 1%;
-  position: relative;
-  width: 48%;
-}
-.gallerypic { // picture
-  display: block;
-  width: 100%;
-  align-self: center;
-}
-.galleryoverlay { // overlay
-  margin: 0;
-  background: rgba(0,20,20,0.7);
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-}
-.galleryitem:hover .galleryoverlay { // when item is hovered, change these overlay settings
-  opacity: 1;
-  transition: $transition;
-}
-.galleryitem .galleryoverlay { // when item is un-hovered, change these overlay settings
-  transition: $transition;
-}
-.gallerytext { // overlay text
-  margin: 0;
-  position: absolute;
-  top: 50%; // center
-  left: 50%; // center
-  transform: translate(-50%, -50%); // compensate for element width/height
-  -webkit-transform: translate(-50%, -50%); // chrome, safari, etc.
-  -ms-transform: translate(-50%, -50%); // internet explorer
-  text-align: center;
-  width: 80%;
-  h2 {
-    margin: 0;
-  }
-}

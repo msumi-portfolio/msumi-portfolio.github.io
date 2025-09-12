@@ -3,10 +3,10 @@ title: contact
 ---
 
 <div class="centered">
-  <img src="{{ '/assets/images/iconcrop.png' | relative_url }}">
-</div><br>
+  <img src="{{ '/assets/images/iconcrop.png' | relative_url }}" alt="abstract black and white pixel art figure" title="abstract black and white pixel art figure">
+</div>
 
-email: <makenasumi@gmail.com>
+## <makenasumi@gmail.com>
 
 ## About
 
@@ -25,7 +25,7 @@ email: <makenasumi@gmail.com>
 
 \* css lightbox edited from [Ashfaq Ahmed](https://codeconvey.com/pure-css-lightbox/)
 
-\* PT Mono and Sanchez from [Google Fonts](https://fonts.google.com/)
+\* Lexend Peta and PT Mono from [Google Fonts](https://fonts.google.com/)
 
 \* [W3Schools](https://www.w3schools.com/) for reference
 

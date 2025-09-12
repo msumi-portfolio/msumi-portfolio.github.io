@@ -3,46 +3,57 @@ title: storyboard
 
 gallerydir: storyboard
 gallery:
-  call:
-    - name: call1
-      filename: call4.png
-      column: 1
-    - name: call2
-      filename: call1.png
-      column: 2
-    - name: call3
-      filename: call2.png
-      column: 1
-    - name: call4
-      filename: call3.png
-      column: 2
   rosenwall:
     - name: rosenwall1
       filename: rosenwall1.png
+      alt: knight kicks a shield toward her distant enemy
       column: 1
     - name: rosenwall2
       filename: rosenwall3.png
+      alt: knight narrowly dodges a shield to the face
       column: 2
     - name: rosenwall3
       filename: rosenwall11.png
+      alt: knight lands in front of enemy mage who has been slammed into the wall
       column: 1
     - name: rosenwall4
       filename: rosenwall5.png
+      alt: mage flips through the air behind knight
       column: 2
   roots:
     - name: roots1
       filename: roots1.png
+      alt: isabel sadly brushes her fingers through her hair
       column: 1
     - name: roots2
       filename: roots2.png
+      alt: isabel freezes as her friend spots the hair creature
       column: 2
     - name: roots3
       filename: roots3.png
+      alt: scissors swoop down upon the fearful hair creature
       column: 1
     - name: roots4
       filename: roots4.png
+      alt: mess of items strewn over isabel's bed and nightstand
       column: 2
-
+  call:
+    - name: call1
+      filename: call4.png
+      alt: "overhead view of shopping aisle 9 'Magical Items'"
+      column: 1
+    - name: call2
+      filename: call1.png
+      alt: hooded wizard nervously adjusts her shoulder bag
+      column: 2
+    - name: call3
+      filename: call2.png
+      alt: wizard weaves through a crowded shopping aisle
+      column: 1
+    - name: call4
+      filename: call3.png
+      alt: wizard recoils in shock after bumping into someone
+      column: 2
 
 ---
 
@@ -59,7 +70,7 @@ rough boards, original
     <iframe src="https://www.youtube.com/embed/HUocWaP9yoA" title="rosenwall animatic" allow="fullscreen"></iframe>
   </div>
 
-{% include gallerynewnooverlay.html category="rosenwall" %}
+  {% include gallerynewnooverlay.html category="rosenwall" %}
 
 </div>
 
@@ -80,7 +91,7 @@ group short film
     <iframe src="https://www.youtube.com/embed/0zFEcYs-Yjs" title="roots animatic" allow="fullscreen"></iframe>
   </div>
 
-{% include gallerynewnooverlay.html category="roots" %}
+  {% include gallerynewnooverlay.html category="roots" %}
 
 </div>
 
@@ -99,7 +110,7 @@ one-month group animatic
     <iframe src="https://www.youtube.com/embed/gYCeVFCw4Qw" title="call of the aisle animatic" allow="fullscreen"></iframe>
   </div>
 
-{% include gallerynewnooverlay.html category="call" loading="lazy" %}
+  {% include gallerynewnooverlay.html category="call" loading="lazy" %}
 
 </div>
 

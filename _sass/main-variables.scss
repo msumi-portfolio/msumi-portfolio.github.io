@@ -36,19 +36,16 @@ $colortoggle: false;
 }
 
 // FONTS /////////////////////////////////////////////////////////////////////////////
-@import url('https://fonts.googleapis.com/css2?family=Slabo+13px&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sanchez&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@font-face { // set custom font
+  font-family: Lexend Peta Black;
+  src: url("/assets/fonts/LexendPeta-Black.ttf"); // requires leading /, does not accept liquid site.baseurl
+}
 
 @font-face { // set custom font
-  font-family: pixelfont;
-  src: url("/assets/fonts/5x5pixelfont.ttf"); // requires leading /, does not accept liquid site.baseurl
+  font-family: PT Mono Regular;
+  src: url("/assets/fonts/PTMono-Regular.ttf"); // requires leading /, does not accept liquid site.baseurl
 }
-@font-face { // set custom font
-  font-family: handwritten;
-  src: url("/assets/fonts/zzzhandwritten.ttf"); // requires leading /, does not accept liquid site.baseurl
-}
+
 @font-face { // set custom font
   font-family: pixeltitle;
   src: url("/assets/fonts/pixeltitle.ttf"); // requires leading /, does not accept liquid site.baseurl
