@@ -80,7 +80,7 @@ revised all boards except title 0:00-0:08
 
 boarded 0:08-1:01, 2:08-2:37, 2:51-3:16, 4:17-4:36
 
-group short film
+team short film
 
 <div class="medwidth">
   <div class="iframecontainer">
@@ -99,7 +99,7 @@ group short film
 
 boarded 0:00-0:24 and 2:10-2:24
 
-one-month group animatic
+one-month team animatic
 
 <div class="medwidth">
   <div class="iframecontainer">

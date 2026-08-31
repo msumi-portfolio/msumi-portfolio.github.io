@@ -11,7 +11,7 @@ gallery:
 
 ## "Roots" Stop Motion Animation Reel
 
-group short film
+team short film
 
 <div class="medwidth">
   <div class="iframecontainer">
