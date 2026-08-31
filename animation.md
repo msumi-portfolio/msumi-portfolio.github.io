@@ -7,6 +7,11 @@ gallery:
     - name: floursack jump
       filename: floursack.gif
       alt: 2D floursack jump and bounce
+  fiatscene:
+    - name: fiatscene
+      filename: zine fiatscene.gif
+      alt: 3D fiat and characters turnaround
+
 ---
 
 ## "Roots" Stop Motion Animation Reel
@@ -46,6 +51,12 @@ lupin iii, fanart
     <iframe src="https://www.youtube.com/embed/G-FVwrotvoo" title="headturn collab" allow="fullscreen"></iframe>
   </div>
 </div>
+
+## "Five of a Kind" Fiat Turnaround
+
+lupin iii, fanart
+
+{% include galleryplain.html category="fiatscene" %}
 
 ## Jump and Run Cycle
 
